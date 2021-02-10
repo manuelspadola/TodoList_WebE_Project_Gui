@@ -1,0 +1,33 @@
+<div class="container" [style.padding-bottom.px]="dynamicPadding">
+  <h2>Todo</h2>
+  <div class="ui icon input">
+    <input type="number" (keyup.enter)="doIdCall()" [(ngModel)]="callId" placeholder="Search ID" name="callId">
+    <i class="search icon"></i>
+  </div>
+  <button class="ui blue button" (click)="doIdCall()">Get Todo</button>
+
+  <div>
+      <!--*ngif="foundTodoList" -->
+    <ng-container *ngIf="foundTodo != null">
+      <div class="content">
+        <!-- <div class="header">Haupttitel: {{ foundTodoList.titel }} mit ID: {{ foundTodoList.id }} </div> -->
+        <div>
+          <div class="header">Todo </div>
+          <br>
+          <ng-container>
+            <div class="metadata">
+              Titel: {{ foundTodo.titel }} mit ID: {{ foundTodo.id }}
+              <br>
+              Aufgabe: {{ foundTodo.text }}
+              <br>
+              Status: {{ foundTodo.erledigt }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div [hidden]="isDisplay">
+    <button class="ui red button" id="deleteButton" (click)="deleteIdCall()">Delete Todo</button>
+  </div>
+</div>

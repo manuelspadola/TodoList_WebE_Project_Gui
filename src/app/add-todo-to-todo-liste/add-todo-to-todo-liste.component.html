@@ -1,0 +1,37 @@
+{{diagnostic}}
+<div class="container" [style.padding-bottom.px]="dynamicPadding">
+  <h1>Todo zu Todoliste hinzufügen</h1>
+
+  <form class="ui form" (ngSubmit)="submitForm()" #todoForm="ngForm">
+
+    <label for="todolistetitel">Todo Liste ID</label>
+    <div class="field">
+      <input name="todolistetitel" id="todolistetitel" [(ngModel)]="callId" required #todoListeTitelInput="ngModel"
+        placeholder="TodoListe ID">
+    </div>
+
+
+    <label for="todotitel">Todo Titel</label>
+    <div class="two fields">
+      <div class="field">
+        <input name="todotitel" id="todotitel" [(ngModel)]="todo.titel" required #todoTitelInput="ngModel"
+          placeholder="Titel">
+        <!-- <div class="ui negative message"
+      *ngFor="let msg of errorsForControl()" control="todoTitelInput" controlName="todotitel">
+      {{ msg }}
+    </div> -->
+      </div>
+
+      <div class="field">
+        <textarea name="text" id="text" [(ngModel)]="todo.text" required #textInput="ngModel"
+          placeholder="Text"></textarea>
+        <!-- <div class="ui negative message"
+      *ngFor="let msg of errorsForControl()" control="textInput" controlName="text">
+      {{ msg }}
+    </div> -->
+      </div>
+    </div>
+
+    <button class="ui green button" type="submit" [disabled]="!todoForm.valid"> Erstellen </button>
+  </form>
+</div>

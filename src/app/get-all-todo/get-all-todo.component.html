@@ -1,0 +1,37 @@
+<div class="container" [style.padding-bottom.px]="dynamicPadding">
+  <div class="cool">
+    <h2>All Todo</h2>
+  </div>
+
+  <div class="ui icon input">
+    <input type="number" (keyup.enter)="doIdCall()" [(ngModel)]="callId" placeholder="Search ID" name="callId">
+    <i class="search icon"></i>
+  </div>
+  <button class="ui blue button" (click)="doIdCall()">Get AllTodo</button>
+
+  <div>
+      <!--*ngif="foundTodoList" -->
+    <ng-container *ngIf="foundTodoList != null">
+      <div class="content">
+        <!-- <div class="header">Haupttitel: {{ foundTodoList.titel }} mit ID: {{ foundTodoList.id }} </div> -->
+        <div>
+          <br>
+          <div class="header">AllTodo </div>
+          <br>
+          <ng-container *ngFor="let todoList of foundTodoList last as l">
+            <div class="metadata">
+              Titel: {{ todoList.titel }} mit ID: {{ todoList.id }}
+              <br>
+              Aufgabe: {{ todoList.text }}
+              <br>
+              Status: {{ todoList.erledigt }}
+              <p *ngIf="!l">____________________________________</p>
+              <br *ngIf="!l">
+            </div>
+          </ng-container>
+        </div>
+        <p>___________________________________________________________________</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

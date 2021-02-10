@@ -1,0 +1,34 @@
+{{diagnostic}}
+<div class="container" [style.padding-bottom.px]="dynamicPadding">
+  <div class="cool">
+    <h2>Benutzer von Todoliste entfernen</h2>
+  </div>
+
+
+
+  <form class="ui form" (ngSubmit)="submitForm()" #todoForm="ngForm">
+
+    <label for="todoId">Benutzer ID</label>
+    <div class="two fields">
+      <div class="field">
+        <input name="todoId" id="todoId" [(ngModel)]="benutzerId" required #todoIdInput="ngModel"
+          placeholder="Nenutzer ID">
+        <!-- <div class="ui negative message"
+      *ngFor="let msg of errorsForControl()" control="todoTitelInput" controlName="todotitel">
+      {{ msg }}
+    </div> -->
+      </div>
+
+      <div class="field">
+        <input name="todoListeId" id="todoListeId" [(ngModel)]="todoListeId" required #todoListeIdInput="ngModel"
+          placeholder="TodoListe ID">
+        <!-- <div class="ui negative message"
+      *ngFor="let msg of errorsForControl()" control="textInput" controlName="text">
+      {{ msg }}
+    </div> -->
+      </div>
+    </div>
+
+    <button class="ui red button" type="submit" [disabled]="!todoForm.valid"> Entfernen </button>
+  </form>
+</div>

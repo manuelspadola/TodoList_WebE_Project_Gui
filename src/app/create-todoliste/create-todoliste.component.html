@@ -1,0 +1,61 @@
+{{diagnostic}}
+<div class="container" [style.padding-bottom.px]="dynamicPadding">
+<h1>TodoListe hinzufügen</h1>
+
+
+<form class="ui form" (ngSubmit)="submitForm()" #todoListeForm="ngForm">
+
+  <label for="titel">Todo Liste Titel</label>
+  <div class="two fields">
+    <div class="field">
+      <input name="titel" id="titel" [(ngModel)]="todoListe.titel" required #titelInput="ngModel"
+        placeholder="Todo Liste Titel">
+      <!-- <div class="ui negative message"
+  *ngFor="let msg of errorsForControl()" control="titelInput" controlName="titel">
+  {{ msg }}
+</div> -->
+    </div>
+    <div class="field">
+      <input name="titelId" id="titelId" [(ngModel)]="todoListe.id" required #titelIdInput="ngModel"
+        placeholder="Todo Liste Titel ID">
+    </div>
+  </div>
+
+
+
+  <label for="todotitel">Todo List</label>
+  <div class="two fields">
+    <div class="field">
+      <input name="todotitel" id="todotitel" [(ngModel)]="todoListe.todoList[0].titel" required
+        #todoTitelInput="ngModel" placeholder="Titel">
+      <!-- <div class="ui negative message"
+      *ngFor="let msg of errorsForControl()" control="todoTitelInput" controlName="todotitel">
+      {{ msg }}
+    </div> -->
+    </div>
+
+    <div class="field">
+      <textarea name="text" id="text" [(ngModel)]="todoListe.todoList[0].text" required #textInput="ngModel"
+        placeholder="Text"></textarea>
+      <!-- <div class="ui negative message"
+      *ngFor="let msg of errorsForControl()" control="textInput" controlName="text">
+      {{ msg }}
+    </div> -->
+    </div>
+
+  </div>
+
+  <label for="benutzer">Benutzer List</label>
+  <div class="field">
+    <input name="benutzer" id="benutzer" [(ngModel)]="todoListe.benutzerList[0].name" required #benutzerInput="ngModel"
+      placeholder="Name">
+    <!-- <div class="ui negative message"
+  *ngFor="let msg of errorsForControl()" control="benutzerInput" controlName="benutzer">
+  {{ msg }}
+</div> -->
+  </div>
+
+
+  <button class="ui green button" type="submit" [disabled]="!todoListeForm.valid"> Erstellen </button>
+</form>
+</div>
