@@ -1,22 +1,22 @@
 <div class="container" [style.padding-bottom.px]="dynamicPadding">
-  <h2>Suche Benutzer</h2>
-  <div class="ui icon input">
+  <h2>Suche alle Benutzer</h2>
+  <!-- <div class="ui icon input">
     <input type="number" (keyup.enter)="doIdCall()" [(ngModel)]="callId" placeholder="Search ID" name="callId">
     <i class="search icon"></i>
-  </div>
-  <button class="ui blue button" (click)="doIdCall()">Get Benutzer</button>
+  </div> -->
+  <button class="ui blue button" (click)="doIdCall()">Get All Benutzer</button>
 
 
   <div>
     <!--*ngif="foundTodoList" -->
     <ng-container *ngIf="foundTodoList != null">
       <div class="content">
-        <div class="header">Benutzer für: {{ foundTodoList.titel }} mit ID: {{ foundTodoList.id }} </div>
+        <!-- <div class="header">Benutzer für: {{ foundTodoList.titel }} mit ID: {{ foundTodoList.id }} </div> -->
         <div>
           <br>
           <div class="header"> Benutzerliste</div>
           <br>
-          <ng-container *ngFor="let benutzerList of foundTodoList.benutzerList last as l">
+          <ng-container *ngFor="let benutzerList of foundTodoList last as l">
             <div class="metadata">
               Benutzer: {{ benutzerList.name }} mit ID: {{ benutzerList.id }}
               <p *ngIf="!l">____________________________________</p>

@@ -10,7 +10,9 @@
     <!--*ngif="foundTodoList" -->
     <ng-container *ngIf="foundTodoList != null">
       <div class="content">
+        <br>
         <div class="header">Haupttitel: {{ foundTodoList.titel }} mit ID: {{ foundTodoList.id }} </div>
+        <br>
         <div>
           <div class="header">TodoList </div>
           <br>
@@ -21,8 +23,28 @@
               Aufgabe: {{ todoList.text }}
               <br>
               Status: {{ todoList.erledigt }}
+              <p *ngIf="!l">____________________________________</p>
+              <br *ngIf="!l">
             </div>
+
+
           </ng-container>
+          <p>__________________________________________________________</p>
+          <div>
+            <br>
+            <div class="header"> Benutzerliste</div>
+            <br>
+            <ng-container *ngFor="let benutzerList of foundTodoList.benutzerList last as l">
+              <div class="metadata">
+                Benutzer: {{ benutzerList.name }} mit ID: {{ benutzerList.id }}
+                <p *ngIf="!l">____________________________________</p>
+                <br *ngIf="!l">
+              </div>
+            </ng-container>
+            <p>__________________________________________________________</p>
+          </div>
+
+
         </div>
       </div>
     </ng-container>

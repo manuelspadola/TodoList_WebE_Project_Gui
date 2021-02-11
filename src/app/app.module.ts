@@ -30,6 +30,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { RegisterUserComponent } from './register-user/register-user.component';
+import { GetAllBenutzerComponent } from './get-all-benutzer/get-all-benutzer.component';
+import { DeleteTodoListeBenutzerComponent } from './delete-todo-liste-benutzer/delete-todo-liste-benutzer.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { RegisterUserComponent } from './register-user/register-user.component';
     DeleteTodoFromTodoListComponent,
     DeleteBenutzerFromTodoListComponent,
     AddBenutzerToTodoListeComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    GetAllBenutzerComponent,
+    DeleteTodoListeBenutzerComponent
   ],
   imports: [
     BrowserModule,

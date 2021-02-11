@@ -14,6 +14,8 @@ import { DeleteTodoFromTodoListComponent } from './delete-todo-from-todo-list/de
 import { DeleteBenutzerFromTodoListComponent } from './delete-benutzer-from-todo-list/delete-benutzer-from-todo-list.component';
 import { AddBenutzerToTodoListeComponent } from './add-benutzer-to-todo-liste/add-benutzer-to-todo-liste.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
+import { GetAllBenutzerComponent } from './get-all-benutzer/get-all-benutzer.component';
+import { DeleteTodoListeBenutzerComponent } from './delete-todo-liste-benutzer/delete-todo-liste-benutzer.component';
 const routes: Routes = [
   {
     path: '',
@@ -75,6 +77,14 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterUserComponent
+  },
+  {
+    path: 'allBenutzer',
+    component: GetAllBenutzerComponent
+  },
+  {
+    path: 'deleteBenutzer',
+    component: DeleteTodoListeBenutzerComponent
   }
 
 

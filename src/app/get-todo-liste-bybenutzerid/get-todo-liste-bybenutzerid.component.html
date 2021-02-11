@@ -11,7 +11,7 @@
     <ng-container *ngIf="foundTodoList != null">
       <div class="content">
         <div class="header">Haupttitel: {{ foundTodoList.titel }} mit ID: {{ foundTodoList.id }} </div>
-        <p>___________________________________________________________________</p>
+        <p>__________________________________________________________</p>
         <div>
           <div class="header"> Benutzerliste</div>
           <br>
@@ -23,7 +23,7 @@
               <br *ngIf="!l">
             </div>
           </ng-container>
-          <p>___________________________________________________________________</p>
+          <p>__________________________________________________________</p>
           <div class="header">TodoList </div>
           <br>
           <ng-container *ngFor="let todoList of foundTodoList.todoList last as l">
@@ -39,7 +39,7 @@
           </ng-container>
         </div>
       </div>
-      <p>___________________________________________________________________</p>
+      <p>__________________________________________________________</p>
     </ng-container>
 
   </div>
